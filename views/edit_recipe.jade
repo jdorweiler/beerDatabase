@@ -1,0 +1,51 @@
+extends layout
+ 
+block content
+    h1= title
+    div.editrecipe
+        form( method="post" action="/recipe/:id/update")
+            input(name="_id", type="hidden", value=recipe._id.toHexString()) 
+            table
+                tr        
+                    div
+                        span.label Title :
+                        input(type="text", name="title" placeholder="Recipe Style", id="editRecipeTitle" value=recipe.title)
+                        span.label Name :
+                        input(type="text", name="name" placeholder="Recipe Name", id="editRecipeName" value=recipe.name)
+                tr
+                    div
+                        span.label Grain :
+                        input(type="text", name="grain" placeholder="Grain", value=recipe.grain[0][0])
+                        span.label amount :
+                        input(type="text", name="grain-ammount" placeholder="", id="editRecipeAmount" value=recipe.grain[1][0])
+                tr
+                    div
+                        span.label Grain :
+                        input(type="text", name="grain" placeholder="Grain", value=recipe.grain[0][1])
+                        span.label amount :
+                        input(type="text", name="grain-ammount" placeholder="", id="editRecipeAmount" value=recipe.grain[1][1])
+                tr
+                    div
+                        span.label Hops :
+                        input(type="text", name="hops" placeholder="Hops", id="editRecipeHOps" value=recipe.hops[0][0])
+                        span.label amount :
+                        input(type="text", name="hops-ammount" placeholder="", id="editRecipeAmount" value=recipe.hops[1][0])
+                tr
+                    div
+                        span.label Hops :
+                        input(type="text", name="hops" placeholder="Hops", id="editRecipeGrain" value=recipe.hops[0][1])
+                        span.label amount :
+                        input(type="text", name="hops-ammount" placeholder="", id="editRecipeAmount" value=recipe.hops[1][1])
+                tr
+                    div
+                        span.label Yeast :
+                        input(type="text", name="yeast" placeholder="Yeast", id="editRecipeGrain" value=recipe.yeast[0])
+                        span.label amount :
+                        input(type="text", name="yeast-ammount" placeholder="", id="editRecipeAmount" value=recipe.yeast[1])
+
+
+                #editRecupeSubmit
+                br
+                input(type="submit", value="Save")
+        br
+        a(href="/")!= "Back to Recipe List"

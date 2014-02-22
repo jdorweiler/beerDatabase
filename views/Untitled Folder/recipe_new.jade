@@ -1,0 +1,17 @@
+extends layout
+
+block content
+    h1= title
+    div.newrecipe
+        form( method="post")
+            div
+                div
+                    span.label Title :
+                    input(type="text", name="title", id="editRecipeTitle")
+                div
+                    span.label Name :
+                    input(type="text", name="name", id="editRecipeName")
+                div
+                    #editRecupeSubmit
+                    input(type="submit", value="Save")
+        a(href="/")!= "Back to Recipe List"

@@ -1,0 +1,19 @@
+extends layout
+head
+body
+	block content
+		h1= title
+
+		#recipes
+		div
+			table 
+				thead
+					tr
+						td Style
+						td Recipe Name
+				tr 
+					td= recipe[0].title
+					td= recipe[0].name 
+				
+
+		a(href="/")= "Back To List" 

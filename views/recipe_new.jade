@@ -1,0 +1,48 @@
+extends layout
+ 
+block content
+    h1= title
+    div.newrecipe
+        form( method="post")
+            table
+                tr        
+                    div
+                        span.label Title :
+                        input(type="text", name="title" placeholder="Recipe Style", id="editRecipeTitle")
+                        span.label Name :
+                        input(type="text", name="name" placeholder="Recipe Name", id="editRecipeName")
+                tr
+                    div
+                        span.label Grain :
+                        input(type="text", name="grain" placeholder="Grain", id="editRecipeGrain")
+                        span.label amount :
+                        input(type="text", name="grain-ammount" placeholder="", id="editRecipeAmount")
+                    div
+                        span.label Grain :
+                        input(type="text", name="grain" placeholder="Grain", id="editRecipeGrain")
+                        span.label amount :
+                        input(type="text", name="grain-ammount" placeholder="", id="editRecipeAmount")
+                tr
+                    div
+                        span.label Hops :
+                        input(type="text", name="hops" placeholder="Hops", id="editRecipeGrain")
+                        span.label amount :
+                        input(type="text", name="hops-ammount" placeholder="", id="editRecipeAmount")
+                tr
+                    div
+                        span.label Hops :
+                        input(type="text", name="hops" placeholder="Hops", id="editRecipeGrain")
+                        span.label amount :
+                        input(type="text", name="hops-ammount" placeholder="", id="editRecipeAmount")
+                tr
+                    div
+                        span.label Yeast :
+                        input(type="text", name="yeast" placeholder="Yeast", id="editRecipeGrain")
+                        span.label amount :
+                        input(type="text", name="yeast-ammount" placeholder="", id="editRecipeAmount")
+
+                #editRecupeSubmit
+                br
+                input(type="submit", value="Save")
+        br
+        a(href="/")!= "Back to Recipe List"

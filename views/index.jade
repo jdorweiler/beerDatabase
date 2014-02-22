@@ -1,0 +1,39 @@
+extends layout
+head
+body
+	block content
+		h1= title
+
+		#recipes
+		div
+			table 
+				thead
+					tr
+						td Style
+						td Recipe Name
+				tr 
+				- each recipe in recipes
+					tr
+						td= recipe.title
+						td= recipe.name 
+						td
+							div
+								form( method="post", action="/recipe/:id/delete")
+									input(name="_id", type="hidden", value=recipe._id.toHexString()) 
+									input(id="edit", value="x", type="submit" style="float: right") 
+						td
+							div
+								form( method="post", action="/recipe/:id/edit")
+									input(name="_id", type="hidden", value=recipe._id.toHexString()) 
+									input(id="edit", value="edit", type="submit" style="float: right") 
+
+		a(href="/recipe/new")= "add new recipe" 
+		br
+		br
+		form(method="post" action="/recipe/search")
+			input(type="text", name="searchterm" id="searchBox" placeholder="search name only")
+			input(id="search", value="search", type="submit") 
+			br
+			"Exact Name Only or This Doesn't Work"
+
+
